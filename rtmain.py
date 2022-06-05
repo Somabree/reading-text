@@ -2,12 +2,14 @@
 # Example:
 # count_words("The cake is done. It is a big cake!") 
 # --> {"cake":2, "big":1, "is":2, "the":1, "a":1, "it":1}
-
+punctuations = [",", ".", "?"] 
 def read_file_content(filename):
     # [assignment] Add your code here 
     with open("D:\Zuri Training\Reading-Text-Files\story.txt", "r") as f:  #using open as a method for reading files
         text = f.read()
-    return text 
+    for item in punctuations:
+        text = text.replace(item, "")
+    return text
 
     
 
